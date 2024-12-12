@@ -1,11 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';  // Importa CommonModule
+import { CompanyService } from '../../../service/company.service';
+import { CreateCompany } from '../../../interfaces/company/create-company.interface';
 
 @Component({
   selector: 'app-company',
-  imports: [],
+  standalone: true,  // Indica que este componente es independiente
+  imports: [
+    CommonModule,  // Asegúrate de importar CommonModule aquí
+  ],
   templateUrl: './company.component.html',
-  styleUrl: './company.component.css'
+  styleUrls: ['./company.component.css']
 })
-export class CompanyComponent {
+export class CompanyComponent implements OnInit {
+  companies: CreateCompany[] = [];  // Variable para almacenar los datos
+  errorMessage: string = '';    // Variable para manejar errores
 
+  constructor(private companyService: CompanyService) {}
+
+  ngOnInit(): void {
+    this.loadCompanies();  // Llamamos a la función para cargar los datos cuando el componente se inicializa
+  }
+
+  loadCompanies(): void {
+    this.companyService.getCompanies().subscribe({
+      next: (data) => {
+        this.companies = data;  // Almacenamos los datos recibidos en la variable companies
+      },
+      error: (err) => {
+        this.errorMessage = err.message;  // Mostramos el mensaje de error en caso de fallo
+      }
+    });
+  }
 }
