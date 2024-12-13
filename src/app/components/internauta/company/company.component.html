@@ -1,19 +1,53 @@
-<div *ngIf="companies && companies.length > 0">
-    <div *ngFor="let company of companies">
-      <p><strong>Nombre:</strong> {{ company.nombre }}</p>
-      <p><strong>Descripción:</strong> {{ company.descripcion }}</p>
-      <p><strong>Imagen:</strong> <img [src]="company.imagen" alt="Imagen de la compañía" width="100"></p>
-      <p><strong>Empleados:</strong> {{ company.empleados }}</p>
-      <p><strong>Proyectos:</strong> {{ company.proyectos }}</p>
-      <p><strong>Experiencia:</strong> {{ company.experiencia }}</p>
+<!-- Hero Section -->
+<div class="hero-section" *ngIf="companies && companies.length > 0">
+  <div *ngFor="let company of companies">
+    <div class="hero-image" [style.backgroundImage]="'url(' + company.imagen + ')'">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>{{ company.nombre }}</h1>
+          <p>{{ company.descripcion }}</p>
+        </div>
+      </div>
     </div>
   </div>
-  
-  <div *ngIf="companies.length === 0">
-    <p>No se encontraron compañías.</p>
+</div>
+
+<!-- Contenido Principal -->
+<div *ngIf="companies && companies.length > 0" class="companies-container">
+  <!-- Sección descriptiva -->
+  <div class="companies-description">
+    <p>
+      Somos una empresa de ingeniería civil especializada en el diseño y utilización
+      de métodos constructivos, de reparación y reforzamiento con alto contenido de ingeniería.
+    </p>
+    <p>
+      La compañía participa en la construcción y/o reparación de todo tipo de estructuras:
+      puentes, edificios, silos, tanques, plantas industriales, plantas nucleares, monumentos históricos,
+      proyectos de energía, bóvedas, presas, puertos, túneles...
+    </p>
   </div>
-  
-  <div *ngIf="errorMessage" class="error">
-    <p>Error al cargar las compañías: {{ errorMessage }}</p>
+
+  <!-- Sección de métricas -->
+  <div class="companies-metrics">
+    <div *ngFor="let company of companies" class="metric-card">
+      <h3 class="metric-value">+{{ company.proyectos }}</h3>
+      <p class="metric-label">Proyectos de infraestructura</p>
+    </div>
+    <div *ngFor="let company of companies" class="metric-card">
+      <h3 class="metric-value">{{ company.empleados }}</h3>
+      <p class="metric-label">Empleados</p>
+    </div>
+    <div *ngFor="let company of companies" class="metric-card">
+      <h3 class="metric-value">+{{ company.experiencia }}</h3>
+      <p class="metric-label">Años de experiencia en México</p>
+    </div>
   </div>
-  
+</div>
+
+<div *ngIf="companies.length === 0" class="no-companies">
+  <p>No se encontraron compañías.</p>
+</div>
+
+<div *ngIf="errorMessage" class="error">
+  <p>Error al cargar las compañías: {{ errorMessage }}</p>
+</div>

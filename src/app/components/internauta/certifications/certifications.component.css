@@ -1,14 +1,75 @@
+/* Contenedor principal */
+.certifications-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.certifications-container h2 {
+  font-size: 24px;
+  color: #002f63;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.certifications-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Lista de certificaciones */
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Tarjeta de certificación */
+.cert-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imagen de certificación */
+.cert-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Contenido de la certificación */
+.cert-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #002f63;
+  margin-bottom: 10px;
+}
+
+.cert-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Mensajes de error y vacíos */
+.no-certifications,
 .error {
-    color: red;
-    font-weight: bold;
-  }
-  
-  div {
-    margin-bottom: 20px;
-  }
-  
-  img {
-    max-width: 100px;
-    height: auto;
-  }
-  
+  text-align: center;
+  margin: 20px 0;
+  color: #002f63;
+  font-size: 16px;
+}

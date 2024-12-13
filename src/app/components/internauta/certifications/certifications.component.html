@@ -1,16 +1,24 @@
-<div *ngIf="certifications && certifications.length > 0">
-    <div *ngFor="let cert of certifications">
-      <p><strong>Nombre:</strong> {{ cert.nombreCert }}</p>
-      <p><strong>Descripción:</strong> {{ cert.datosCert }}</p>
-      <p><strong>Imagen:</strong> <img [src]="cert.imgCert" alt="Imagen de la certificación" width="100"></p>
+<div *ngIf="certifications && certifications.length > 0" class="certifications-container">
+  <h2>Sistema de Gestión Integral Certificado</h2>
+  <p class="certifications-subtitle">
+    Conforme a los estándares ISO 9001:2015, ISO 14001:2015, ISO 45001:2018.
+  </p>
+  
+  <div class="certifications-list">
+    <div *ngFor="let cert of certifications" class="cert-card">
+      <img [src]="cert.imgCert" alt="{{ cert.nombreCert }}" class="cert-image" />
+      <div class="cert-content">
+        <h3 class="cert-title">{{ cert.nombreCert }}</h3>
+        <p class="cert-description">{{ cert.datosCert }}</p>
+      </div>
     </div>
   </div>
-  
-  <div *ngIf="certifications.length === 0">
-    <p>No se encontraron certificaciones.</p>
-  </div>
-  
-  <div *ngIf="errorMessage" class="error">
-    <p>Error al cargar las certificaciones: {{ errorMessage }}</p>
-  </div>
-  
+</div>
+
+<div *ngIf="certifications.length === 0" class="no-certifications">
+  <p>No se encontraron certificaciones.</p>
+</div>
+
+<div *ngIf="errorMessage" class="error">
+  <p>Error al cargar las certificaciones: {{ errorMessage }}</p>
+</div>
