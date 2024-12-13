@@ -6,6 +6,7 @@ import { CompanyComponent } from './components/internauta/company/company.compon
 import { CertificationsComponent } from './components/internauta/certifications/certifications.component';
 import { ServiceComponent } from './components/internauta/services/service.component';
 import { CatalogComponent } from './components/internauta/catalog/catalog.component';
+import { QuoteComponent } from './components/internauta/quote/quote.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { CatalogComponent } from './components/internauta/catalog/catalog.compon
     CompanyComponent,  // Importa el componente CompanyComponentInt
     CertificationsComponent,
     ServiceComponent,
-    CatalogComponent
+    CatalogComponent,
+    QuoteComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
