@@ -19,7 +19,6 @@ export class CompanyComponent implements OnInit {
   ngOnInit(): void {
     this.loadCompanies();  // Llamamos a la función para cargar los datos cuando el componente se inicializa
   }
-
   
   loadCompanies(): void {
     this.companyService.getCompanies().subscribe({
