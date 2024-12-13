@@ -1,0 +1,14 @@
+.error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  div {
+    margin-bottom: 20px;
+  }
+  
+  img {
+    max-width: 100px;
+    height: auto;
+  }
+  
