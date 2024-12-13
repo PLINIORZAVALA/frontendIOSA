@@ -7,7 +7,7 @@ import { CreateCompany } from '../../../interfaces/company/create-company.interf
   selector: 'app-company',
   standalone: true,  // Indica que este componente es independiente
   imports: [
-    CommonModule,  // Asegúrate de importar CommonModule aquí
+    CommonModule  // Asegúrate de importar CommonModule aquí
   ],
   templateUrl: './company.component.html',
   styleUrls: ['./company.component.css']
@@ -25,9 +25,11 @@ export class CompanyComponent implements OnInit {
   loadCompanies(): void {
     this.companyService.getCompanies().subscribe({
       next: (data) => {
+        console.log('Datos recibidos:', data);  // Agrega este console.log para verificar los datos
         this.companies = data;  // Almacenamos los datos recibidos en la variable companies
       },
       error: (err) => {
+        console.error('Error al cargar los datos:', err);  // Agrega este console.error para verificar errores
         this.errorMessage = err.message;  // Mostramos el mensaje de error en caso de fallo
       }
     });
