@@ -45,7 +45,7 @@ export class QuoteComponent implements OnInit {
     // Llamada al servicio para crear la cotización
     this.quoteService.createQuote(this.nuevoQuote).subscribe({
       next: (response) => {
-        this.successMessage = 'Cotización creada con éxito';
+        this.successMessage = 'Cotización enviada con éxito';
         this.errorMessage = '';
         this.nuevoQuote = { nombre: '', apellido: '', tipoDePersona: '', email: '', telefono: '' }; // Limpiar formulario
       },

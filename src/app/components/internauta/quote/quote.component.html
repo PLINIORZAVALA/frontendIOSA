@@ -1,4 +1,4 @@
-<form (ngSubmit)="crearCotizacion()">
+<form (ngSubmit)="crearCotizacion()" class="form-container">
     <div *ngIf="successMessage" class="alert alert-success">
       {{ successMessage }}
     </div>
@@ -6,31 +6,31 @@
       {{ errorMessage }}
     </div>
   
-    <div>
+    <div class="form-group">
       <label for="nombre">Nombre</label>
       <input id="nombre" [(ngModel)]="nuevoQuote.nombre" name="nombre" type="text" required />
     </div>
   
-    <div>
+    <div class="form-group">
       <label for="apellido">Apellido</label>
       <input id="apellido" [(ngModel)]="nuevoQuote.apellido" name="apellido" type="text" required />
     </div>
   
-    <div>
+    <div class="form-group">
       <label for="tipoDePersona">Tipo de Persona</label>
       <input id="tipoDePersona" [(ngModel)]="nuevoQuote.tipoDePersona" name="tipoDePersona" type="text" required />
     </div>
   
-    <div>
+    <div class="form-group">
       <label for="email">Email</label>
       <input id="email" [(ngModel)]="nuevoQuote.email" name="email" type="email" required />
     </div>
   
-    <div>
+    <div class="form-group">
       <label for="telefono">Teléfono</label>
       <input id="telefono" [(ngModel)]="nuevoQuote.telefono" name="telefono" type="text" required />
     </div>
   
-    <button type="submit" [disabled]="isLoading">Crear Cotización</button>
+    <button type="submit" [disabled]="isLoading" class="btn-submit">Enviar Cotización</button>
   </form>
   
