@@ -1,1 +1,15 @@
-<p>service works!</p>
+<div *ngIf="services && services.length > 0">
+    <div *ngFor="let service of services">
+      <p><strong>Tipo:</strong> {{ service.tipo }}</p>
+      <p><strong>Descripción:</strong> {{ service.descripcion }}</p>
+    </div>
+  </div>
+  
+  <div *ngIf="services.length === 0">
+    <p>No se encontraron servicios.</p>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error">
+    <p>Error al cargar los servicios: {{ errorMessage }}</p>
+  </div>
+  

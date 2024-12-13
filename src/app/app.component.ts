@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';  // Importa CommonModule
 //Internauta
 import { CompanyComponent } from './components/internauta/company/company.component';
 import { CertificationsComponent } from './components/internauta/certifications/certifications.component';
+import { ServiceComponent } from './components/internauta/services/service.component';
 @Component({
   selector: 'app-root',
   standalone: true,  // Indica que este componente es independiente
@@ -11,7 +12,7 @@ import { CertificationsComponent } from './components/internauta/certifications/
     CommonModule,  // Asegúrate de importar CommonModule aquí
     CompanyComponent,  // Importa el componente CompanyComponentInt
     CertificationsComponent,
-
+    ServiceComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
