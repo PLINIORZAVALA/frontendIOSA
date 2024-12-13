@@ -1,11 +1,24 @@
-/* Contenedor principal */
-.catalog-container {
+/* Contenedor principal con scroll horizontal */
+.catalog-scroll-container {
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: auto;
     gap: 20px;
-    justify-content: center;
     padding: 20px;
     background-color: #f8f9fa;
+    scroll-behavior: smooth;
+  }
+  
+  .catalog-scroll-container::-webkit-scrollbar {
+    height: 10px; /* Altura de la barra de desplazamiento */
+  }
+  
+  .catalog-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #002f63; /* Color del scroll */
+    border-radius: 5px;
+  }
+  
+  .catalog-scroll-container::-webkit-scrollbar-track {
+    background-color: #ddd;
   }
   
   /* Tarjeta de catálogo */
@@ -15,6 +28,7 @@
     border-radius: 8px;
     overflow: hidden;
     width: 300px;
+    flex-shrink: 0; /* Evita que las tarjetas se reduzcan */
     display: flex;
     flex-direction: column;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

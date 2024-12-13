@@ -1,4 +1,4 @@
-<div *ngIf="catalogs && catalogs.length > 0" class="catalog-container">
+<div *ngIf="catalogs && catalogs.length > 0" class="catalog-scroll-container">
     <div *ngFor="let catalog of catalogs" class="catalog-card">
       <img [src]="catalog.imagen" alt="Imagen del catálogo" class="catalog-image" />
       <div class="catalog-content">

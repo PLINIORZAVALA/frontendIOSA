@@ -1,11 +1,14 @@
-<div *ngIf="services && services.length > 0">
-    <div *ngFor="let service of services">
-      <p><strong>Tipo:</strong> {{ service.tipo }}</p>
-      <p><strong>Descripción:</strong> {{ service.descripcion }}</p>
+<div *ngIf="services && services.length > 0" class="services-grid">
+    <div *ngFor="let service of services" class="service-card">
+      <img [src]="" alt="{{ service.tipo }}" class="service-image" />
+      <div class="service-content">
+        <h3 class="service-title">{{ service.tipo }}</h3>
+        <p class="service-description">{{ service.descripcion }}</p>
+      </div>
     </div>
   </div>
   
-  <div *ngIf="services.length === 0">
+  <div *ngIf="services.length === 0" class="no-services">
     <p>No se encontraron servicios.</p>
   </div>
   
