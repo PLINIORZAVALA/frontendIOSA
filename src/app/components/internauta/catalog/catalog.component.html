@@ -1,12 +1,14 @@
-<div *ngIf="catalogs && catalogs.length > 0">
-    <div *ngFor="let catalog of catalogs">
-      <p><strong>Nombre:</strong> {{ catalog.nombre }}</p>
-      <p><strong>Descripción:</strong> {{ catalog.descripcion }}</p>
-      <p><strong>Imagen:</strong> <img [src]="catalog.imagen" alt="Imagen del catálogo" width="100"></p>
+<div *ngIf="catalogs && catalogs.length > 0" class="catalog-container">
+    <div *ngFor="let catalog of catalogs" class="catalog-card">
+      <img [src]="catalog.imagen" alt="Imagen del catálogo" class="catalog-image" />
+      <div class="catalog-content">
+        <h3 class="catalog-title">{{ catalog.nombre }}</h3>
+        <p class="catalog-description">{{ catalog.descripcion }}</p>
+      </div>
     </div>
   </div>
   
-  <div *ngIf="catalogs.length === 0">
+  <div *ngIf="catalogs.length === 0" class="no-catalogs">
     <p>No se encontraron catálogos.</p>
   </div>
   
