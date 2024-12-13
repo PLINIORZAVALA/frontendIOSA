@@ -1,1 +1,16 @@
-<p>catalog works!</p>
+<div *ngIf="catalogs && catalogs.length > 0">
+    <div *ngFor="let catalog of catalogs">
+      <p><strong>Nombre:</strong> {{ catalog.nombre }}</p>
+      <p><strong>Descripción:</strong> {{ catalog.descripcion }}</p>
+      <p><strong>Imagen:</strong> <img [src]="catalog.imagen" alt="Imagen del catálogo" width="100"></p>
+    </div>
+  </div>
+  
+  <div *ngIf="catalogs.length === 0">
+    <p>No se encontraron catálogos.</p>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error">
+    <p>Error al cargar los catálogos: {{ errorMessage }}</p>
+  </div>
+  
