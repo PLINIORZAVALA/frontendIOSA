@@ -1,0 +1,62 @@
+/* Estilos generales del header */
+.header {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 15px 0; /* Espaciado superior e inferior */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Logo */
+  .header-logo img {
+    max-width: 120px;
+  }
+  
+  /* Navegación */
+  .header-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .header-nav a {
+    text-decoration: none;
+    color: #002f63; /* Azul */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .header-nav a:hover {
+    color: #d01f1f; /* Rojo al pasar el mouse */
+  }
+  
+  /* Adaptabilidad para dispositivos pequeños */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .header-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+  
+    .header-logo img {
+      max-width: 100px;
+    }
+  
+    .header-nav a {
+      font-size: 14px;
+    }
+  }
+  
