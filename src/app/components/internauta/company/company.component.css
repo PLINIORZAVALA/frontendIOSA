@@ -1,0 +1,12 @@
+/* Estilos para el componente Company */
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 8px;
+    margin: 4px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+  }

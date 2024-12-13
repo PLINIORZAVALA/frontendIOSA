@@ -1,0 +1,19 @@
+<div *ngIf="companies && companies.length > 0">
+    <div *ngFor="let company of companies">
+      <p><strong>Nombre:</strong> {{ company.nombre }}</p>
+      <p><strong>Descripción:</strong> {{ company.descripcion }}</p>
+      <p><strong>Imagen:</strong> <img [src]="company.imagen" alt="Imagen de la compañía" width="100"></p>
+      <p><strong>Empleados:</strong> {{ company.empleados }}</p>
+      <p><strong>Proyectos:</strong> {{ company.proyectos }}</p>
+      <p><strong>Experiencia:</strong> {{ company.experiencia }}</p>
+    </div>
+  </div>
+  
+  <div *ngIf="companies.length === 0">
+    <p>No se encontraron compañías.</p>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error">
+    <p>Error al cargar las compañías: {{ errorMessage }}</p>
+  </div>
+  
