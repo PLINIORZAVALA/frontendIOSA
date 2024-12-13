@@ -8,6 +8,10 @@ import { ServiceComponent } from './components/internauta/services/service.compo
 import { CatalogComponent } from './components/internauta/catalog/catalog.component';
 import { QuoteComponent } from './components/internauta/quote/quote.component';
 
+//Head and footer
+import { ZFooterComponent } from './components/z-footer/z-footer.component';
+import { ZHeadComponent } from './components/z-head/z-head.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,  // Indica que este componente es independiente
@@ -17,7 +21,9 @@ import { QuoteComponent } from './components/internauta/quote/quote.component';
     CertificationsComponent,
     ServiceComponent,
     CatalogComponent,
-    QuoteComponent
+    QuoteComponent,
+    ZFooterComponent,
+    ZHeadComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
