@@ -32,4 +32,15 @@ export class CompanyComponent implements OnInit {
       }
     });
   }
+
+  getCompanies(imagen: string): string {
+    return `home/company/${imagen}`;
+  }
+
+  /* 
+  getImagePath(nombreImagen: string): string {
+    // Asegúrate de que el path sea accesible desde el navegador
+    return `images/catalogo/${nombreImagen}`;
+  } 
+  */
 }

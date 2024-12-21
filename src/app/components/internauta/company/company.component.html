@@ -1,6 +1,14 @@
 <!-- Hero Section -->
 <div class="hero-section" *ngIf="companies && companies.length > 0">
   <div *ngFor="let company of companies">
+
+    <!-- <img [src] = company.imagen alt="{{company.imagen}}" />
+    <img [src] = 'company.imagen' alt="{{company.imagen}}" /> 
+    <img [src]="getImagePath(imagen.ruta_imagen)" alt="{{ imagen.descripcion_imagen }}" />
+    -->
+
+    <img [src]="getCompanies(company.imagen)" alt="{{ company.descripcion}}"/>
+
     <div class="hero-image" [style.backgroundImage]="'url(' + company.imagen + ')'">
       <div class="hero-overlay">
         <div class="hero-content">
