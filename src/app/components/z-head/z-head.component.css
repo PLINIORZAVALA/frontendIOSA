@@ -1,6 +1,6 @@
 /* Estilos generales del header */
 .header {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #00205B; /* Fondo blanco */
     padding: 15px 0; /* Espaciado superior e inferior */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   }
@@ -27,7 +27,7 @@
   
   .header-nav a {
     text-decoration: none;
-    color: #002f63; /* Azul */
+    color: #FFFF; /* Azul */
     font-size: 16px;
     font-weight: bold;
     transition: color 0.3s ease;
