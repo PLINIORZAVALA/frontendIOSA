@@ -1,21 +1,18 @@
-<!-- Mostrar mensaje de error si existe -->
-<div *ngIf="errorMessage" class="error">
-  <p>{{ errorMessage }}</p>
-</div>
-
-<!-- Mostrar lista de servicios -->
-<div class="services-container">
-  <div class="service-card" *ngFor="let service of services">
-    <!-- Mostrar la imagen principal -->
-    <img [src]="service.img" alt="{{ service.tipo }}" class="service-image" />
-    <div class="service-content">
-      <h3>{{ service.tipo }}</h3>
-      <p>{{ service.descripcion }}</p>
+<div *ngIf="services && services.length > 0" class="services-grid">
+    <div *ngFor="let service of services" class="service-card">
+      <img [src]="" alt="{{ service.tipo }}" class="service-image" />
+      <div class="service-content">
+        <h3 class="service-title">{{ service.tipo }}</h3>
+        <p class="service-description">{{ service.descripcion }}</p>
+      </div>
     </div>
   </div>
-</div>
-
-<!-- Si no hay servicios disponibles y no hay mensaje de error -->
-<div *ngIf="services.length === 0 && !errorMessage">
-  <p>No hay servicios disponibles.</p>
-</div>
+  
+  <div *ngIf="services.length === 0" class="no-services">
+    <p>No se encontraron servicios.</p>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error">
+    <p>Error al cargar los servicios: {{ errorMessage }}</p>
+  </div>
+  
